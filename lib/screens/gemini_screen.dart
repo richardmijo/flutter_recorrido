@@ -19,7 +19,6 @@ class _GeminiScreenState extends State<GeminiScreen> {
   bool _isLoading = false;
   late final GenerativeModel _model;
   bool _apiKeyError = false;
-  List<String> _availableModels = [];
 
   @override
   void initState() {
@@ -59,11 +58,6 @@ class _GeminiScreenState extends State<GeminiScreen> {
         debugPrint(
           "Failed to list models: ${response.statusCode} ${response.body}",
         );
-        if (mounted) {
-          setState(() {
-            _availableModels = ["Error listing models: ${response.statusCode}"];
-          });
-        }
       }
     } catch (e) {
       debugPrint("Error checking models: $e");
@@ -147,26 +141,6 @@ class _GeminiScreenState extends State<GeminiScreen> {
                         style: const TextStyle(fontSize: 16),
                       ),
                     ),
-                    if (_availableModels.isNotEmpty) ...[
-                      const SizedBox(height: 20),
-                      const Text(
-                        "Debug: Modelos Disponibles:",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 10),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        color: Colors.grey.shade200,
-                        height: 150,
-                        child: ListView.builder(
-                          itemCount: _availableModels.length,
-                          itemBuilder: (context, index) => Text(
-                            _availableModels[index],
-                            style: const TextStyle(fontSize: 12),
-                          ),
-                        ),
-                      ),
-                    ],
                   ],
                 ),
               ),

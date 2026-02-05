@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tutorial Coach Mark Demo')),
+      appBar: AppBar(title: const Text('Coach Mark Demo y Chats IA')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
