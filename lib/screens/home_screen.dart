@@ -50,7 +50,17 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 context.push('/gemini');
               },
-              child: const Text('Chat con Gemini AI'),
+              child: const Text('Chat con Gemini AI (API Key)'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange.shade100,
+              ),
+              onPressed: () {
+                context.push('/firebase-vertex');
+              },
+              child: const Text('Chat con Firebase Vertex'),
             ),
           ],
         ),
