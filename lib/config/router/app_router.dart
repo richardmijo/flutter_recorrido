@@ -4,6 +4,7 @@ import '../../screens/tutorial_screen.dart';
 import '../../screens/simple_tutorial_screen.dart';
 import '../../screens/custom_tutorial_screen.dart';
 import '../../screens/stateless_tutorial_screen.dart';
+import '../../screens/gemini_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -25,5 +26,6 @@ final appRouter = GoRouter(
       path: '/stateless-tutorial',
       builder: (context, state) => StatelessTutorialScreen(),
     ),
+    GoRoute(path: '/gemini', builder: (context, state) => const GeminiScreen()),
   ],
 );

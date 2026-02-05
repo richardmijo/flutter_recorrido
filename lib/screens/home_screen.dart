@@ -42,6 +42,16 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Versión Stateless Widget'),
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green.shade100,
+              ),
+              onPressed: () {
+                context.push('/gemini');
+              },
+              child: const Text('Chat con Gemini AI'),
+            ),
           ],
         ),
       ),
